@@ -8,6 +8,7 @@ def Monster():
             alive = False
         else:
             alive = True
+        return self.hp
 
     def check_status():
         if alive == True:
@@ -18,4 +19,4 @@ def Monster():
 monster1 = Monster()
 monster2 = Monster()
 
-monster1.damage(10) # AttributeError: 'NoneType' object has no attribute 'damage'
+monster1.damage() # AttributeError: 'NoneType' object has no attribute 'damage'
