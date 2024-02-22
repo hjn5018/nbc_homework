@@ -1,10 +1,14 @@
 class Member:
+    name = ""
+    username = ""
+    password = ""
     def display(self, name, username):
         print(self.name, self.username)
-        pass
 
 class Post:
-    pass
+    title = ""
+    content = ""
+    author = "" # !!! username이 저장되어야 함!!!
 
 # member1 = Member("몰리") # TypeError: Member() takes no arguments
 # member2 = Member("카다")
