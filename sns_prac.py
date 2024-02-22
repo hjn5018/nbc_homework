@@ -18,6 +18,13 @@ member1 = Member()
 member2 = Member()
 member3 = Member()
 
+
+member1.name = '몰리'
+member1.username = '카다'
+member1.password = '보'
+
+member1.display()
+
 members = []
 # print(type(members))
 # print(type(member1))   # member1의 타입은 <class '__main__.Member'>
