@@ -55,8 +55,8 @@ members.append(member3.name)
 # members.append("1") # append test
 # print(members)      # append test
 
-for member in members:
-    print(member)        # 과제 5-a
+# for member in members:
+#     print(member)        # 과제 5-a
 
 
 # 1. member1이 게시글을 세 개 이상 작성하는 코드를 만들자.        //과제 6의 일부
@@ -140,7 +140,7 @@ posts_title.append(post8.title)
 posts_title.append(post9.title)
 
 # print(posts_title)
-# # ['오운완1', '오T완1', '오S완1']
+# # ['오운완1', '오T완1', '오S완1', '오운완2', '오T완2', '오S완2', '오운완3', '오T완3', '오S완3']
 
 posts_content = []
 
@@ -159,7 +159,7 @@ posts_content.append(post8.content)
 posts_content.append(post9.content)
 
 # print(posts_content)
-# # ['오늘 운동 완료1', '오늘 TIL 완료1', '오늘 SQL 완료1']
+# # ['오늘 운동 완료1', '오늘 TIL 완료1', '오늘 SQL 완료1', '오늘 운동 완료2', '오늘 TIL 완료2', '오늘 SQL 완료2', '오늘 운동 완료3', '오늘 TIL 완료3', '오늘 SQL 완료3']
 
 posts_author = []
 
@@ -174,7 +174,11 @@ posts_author.append(post8.author)
 posts_author.append(post9.author)
 
 # print(posts_author)
-# # ['몰리1', '몰리1', '몰리1']
+# # ['몰리1', '몰리1', '몰리1', '몰리2', '몰리2', '몰리2', '몰리3', '몰리3', '몰리3']
 
 # print(posts_title, posts_content, posts_author) # 확인 완료
 
+# for author in posts_author:                 # 과제 내용 6-a
+#     # print(username) # test
+#     if author == '몰리1':
+#         print(posts_title)
