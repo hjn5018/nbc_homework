@@ -20,11 +20,11 @@ member3 = Member()
 
 members = []
 # print(type(members))
+print(type(member1))   # member1의 타입은 <class '__main__.Member'>
 
-
-members = members.append(member1) 
-members = members.append(member2) # AttributeError: 'NoneType' object has no attribute 'append'
-members = members.append(member3) 
+# members = members.append(member1) 
+# members = members.append(member2) # AttributeError: 'NoneType' object has no attribute 'append'
+# members = members.append(member3) 
 
 
 # print(members)
