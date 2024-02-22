@@ -19,10 +19,12 @@ member2 = Member()
 member3 = Member()
 
 members = []
+# print(type(members))
 
-members = members.append(member1) # AttributeError: 'NoneType' object has no attribute 'append'
-members = members.append(member2) 
+
+members = members.append(member1) 
+members = members.append(member2) # AttributeError: 'NoneType' object has no attribute 'append'
 members = members.append(member3) 
 
 
-print(member)
+# print(members)
