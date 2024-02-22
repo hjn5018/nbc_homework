@@ -2,7 +2,7 @@ class Member:
     name = ""
     username = ""
     password = ""
-    def display(self, name, username):
+    def display(self):
         print(self.name, self.username)
 
 class Post:
@@ -14,14 +14,15 @@ class Post:
 # member2 = Member("카다")
 # member3 = Member("보")
 
-Moly = Member()
-Kada = Member()
-Bo = Member()
+member1 = Member()
+member2 = Member()
+member3 = Member()
 
 members = []
 
-members = members.append(Moly) # AttributeError: 'NoneType' object has no attribute 'append'
-members = members.append(Kada)
-members = members.append(Bo)
+members = members.append(member1) # AttributeError: 'NoneType' object has no attribute 'append'
+members = members.append(member2) 
+members = members.append(member3) 
+
 
 print(member)
