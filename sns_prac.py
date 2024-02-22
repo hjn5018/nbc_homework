@@ -1,32 +1,23 @@
-class Member():
-    def name(self, name):
-        self.name
-
-    def username(self, username):
-        self.username
-
-    def password(self, password):
-        self.password
-
+class Member:
     def display(self, name, username):
         print(self.name, self.username)
+        pass
 
+class Post:
+    pass
 
-class Post():
-    def title(self, title):
-        self.title
-    
-    def content(self, content):
-        self.content
+# member1 = Member("몰리") # TypeError: Member() takes no arguments
+# member2 = Member("카다")
+# member3 = Member("보")
 
-member1 = Member("몰리") # TypeError: Member() takes no arguments
-member2 = Member("카다")
-member3 = Member("보")
+Moly = Member()
+Kada = Member()
+Bo = Member()
 
 members = []
 
-members = members.append(member1)
-members = members.append(member2)
-members = members.append(member3)
+members = members.append(Moly) # AttributeError: 'NoneType' object has no attribute 'append'
+members = members.append(Kada)
+members = members.append(Bo)
 
 print(member)
