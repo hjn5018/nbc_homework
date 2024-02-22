@@ -20,3 +20,5 @@ monster2 = Monster()
 
 monster1.damage(10) # AttributeError: 'NoneType' object has no attribute 'damage'
 monster1.check_status()
+monster2.damage(65)
+monster2.check_status()
