@@ -2,8 +2,8 @@ class Monster():
     hp = 100
     alive = True
     
-    def damage(self, hp):
-        self.hp = self.hp - hp
+    def damage(self, attack):
+        self.hp = self.hp - attack
         # if self.hp < 100:
         #     alive = False
         # else:
@@ -18,7 +18,7 @@ class Monster():
 monster1 = Monster()
 monster2 = Monster()
 
-monster1.damage(10) # AttributeError: 'NoneType' object has no attribute 'damage'
+monster1.damage(100) # AttributeError: 'NoneType' object has no attribute 'damage'
 monster1.check_status()
 monster2.damage(65)
 monster2.check_status()
