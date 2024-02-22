@@ -1,3 +1,0 @@
-1. VsCode terminal에서 파일 이동하기
-2. VsCode terminal에서 프로젝트 파일 열기
-3. 프로토 타입 개선하기

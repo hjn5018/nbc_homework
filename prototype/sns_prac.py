@@ -361,3 +361,54 @@ posts.append(post9_dict)
 #     # print(username) # test
 #     if author == '몰리1':
 #         print(posts_title)
+
+# ===========================================================================================================
+# 풀이과정 및 회고
+
+# 클래스, 인스턴스, 메소드는 그렇다 치는데,
+# 어트리뷰트의 개념부터가 이해하기 힘들었다.
+# '내가 강의로 배운 내용은 hp=100이고 alive=True인 괴물밖에 없었는데
+# name, username, password는 subclass로 해야하나??
+# 근데 Member 클래스의 속성이어야한다고 했는데..ㅁㄴㅇㄻㄴㄹ'
+
+# 그러다가 method의 self 매개변수 활용법에 대해 조금 더 이해했다.
+# self 매개변수는 class의 def 에서 self.hp등으로 class의 속성(attribute)와 조합하여 사용할 수 있다.
+# (함수는 클래스 내부에서 정의할 때 메소드로 개념이 달리 이루어진다.)
+# 또한 적어도 내가 배운 예시에서는 속성이 메소드의 매개변수로 자리잡는 일은 없었다.
+# 메소드의 매개변수는 임의의 단어로 설정할 수 있고, 이는 메소드의 컨셉에 따라서 마음대로 정하면 되는 것 같다.
+
+# 그렇게 name, username, password를 class 내부에 기술했다.
+# 그리고 인스턴스를 빈 리스트에 저장하는 후반부 과정에서 착안하여
+# 속성들을 빈 스트링("")으로 우선 정의했다.
+
+# 나머지는 비교적 수월했다.
+# 우선 인스턴스를 생성했다.(멤1,멤2,멤3)
+# 그리고 빈 스트링으로 만들어 놓은 속성들에 내 맘대로 끄적였다.
+# 사실 self.name처럼 속성을 이용하는 것은 class 안에서 def를 정의할 때 밖에 해보지 않았다.
+
+# 경험해본 것이라고는 클래스를 공부할 때 혼자서 따라 적어보았던 monste1.damage(10)같은
+# .damage()나 .check_status()같은 메소드였다.
+# 그런데, 일단은 self가 인스턴스를 대표하는 posisional argument라고 생각이 들었고,
+# .name으로 각 인스턴스의 내용을 채우지 않으면 뭘로 채우나? 싶어서 해봤다.
+
+# 몇몇의 착안점은 있었지만 시도해보고 member1.display()로 속성이 잘 기입이 되었나 확인했다. ^^
+# 사실 member1 = Member("몰리") 같은 시도도 해봤다.(물론 TypeError가 나왔음.)
+
+# 이후로는 append를 사용하는 데 잘못된 사용법으로 오류가 나기도 했다.
+# 잘못된 사용법 (members = members.append(member2) # AttributeError: 'NoneType' object has no attribute 'append')
+# 정확한 사용법 (members.append(member1_dict))
+# 여기서 append가 메소드라는 것을 인식했다. --> 맞나??
+
+# 그리고 회원 인스턴스/ post 인스턴스를 빈 리스트에 append해서 저장하라는 말만 보고
+# --------------------------------
+# posts_title = []
+
+# posts_title.append(post1.title)
+# posts_title.append(post2.title)
+
+# posts_content = []
+# posts_content.append(post1.content)
+# posts_content.append(post2.content)
+# ...
+# --------------------------------
+# 같이 그냥 냅다 리스트에 박아버리기도 했다.
