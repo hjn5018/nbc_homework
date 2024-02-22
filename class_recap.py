@@ -4,14 +4,14 @@ class Monster():
     
     def damage(self, hp):
         self.hp = self.hp - hp
-        if self.hp < 100:
-            alive = False
-        else:
-            alive = True
+        # if self.hp < 100:
+        #     alive = False
+        # else:
+        #     alive = True
 
-    def check_status():
-        if alive == True:
-            print("alive!")
+    def check_status(self):
+        if self.hp > 0:
+            print(self.hp)
         else:
             print("Died")
 
