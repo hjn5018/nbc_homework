@@ -1,9 +1,10 @@
 3. class Member():    # ()괄호를 사용해도 실행이 되고, 괄호를 사용하지 않아도 실행이 되는데, 어떤 기능이 있나요?
+
 4. sns_prac에 *arg같은 것을 써봐도 괜찮지 않을까 하는 생각이 들었다.( append 노가다하다가 든 생각.)
 
 5. members.append(member1_dict) .append()는 method인가?? 그런 것 같긴 한데.. 형태만 보고 판단할 수 있는 건가..
 
-6. up_down.py에서 추가 도전 과제 while 안에서 while 중복 사용 방법..... 조금 어렵다...
+6. up_down.py에서 추가 도전 과제 while 안에서 while 중복 사용 방법..... 조금 어렵다...???? (다시 보니까 무슨 말인지)(아마도 게임 초기화 후 재 실행하는 반복문 말하는 듯 for문으로 할 수는 없으니까)
 
 7. sns_prac에서 속성 부여 방법을 변경해보자
 class Member():
@@ -24,4 +25,7 @@ class Member():
 인스턴스 생성
 m1 = Member("진용", "몰리", "1q2w")
 요롷게??
+
+8. up_down에 try except넣어도 괜찮을 듯
+
 
