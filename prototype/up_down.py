@@ -13,7 +13,7 @@ random_number = random.randint(1, 100) # 1 ~ 100 무작위 숫자 선정
 i = 1 # 시도 횟수 부여
 i_list = []
 
-def max_tryout(i_list):
+def max_tryout(i_list):     # 가장 큰 숫자 찾기(시도한 횟수 제일 큰 놈으로다가)
     max_num = i_list[0]
     for num in i_list:
         if num > max_num:
@@ -148,13 +148,13 @@ dk!!!!!!!!!!!!!!!!!!!11111
 
 # for i, j in enumerate(ex_list):
 #     print(i, j)
-#     print(j)
-#     print(i)
-#     막막하네..
-#     구현부 봐도 모르겠네
-#     배운거긴 한데..
-#     배웠을 때도 오래 걸렸구나..
-#     심지어 enumerate도 안 쓰네
+    # print(j)
+    # print(i)
+    # 막막하네..
+    # 구현부 봐도 모르겠네
+    # 배운거긴 한데..
+    # 배웠을 때도 오래 걸렸구나..
+    # 심지어 enumerate도 안 쓰네
 
 # ex_list = [45, 7, 15, 9, 82, 70, 30, 20]
 
