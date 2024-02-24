@@ -26,6 +26,5 @@ class Member():
 m1 = Member("진용", "몰리", "1q2w")
 요롷게??
 
-8. up_down에 try except넣어도 괜찮을 듯
 
 
