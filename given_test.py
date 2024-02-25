@@ -55,10 +55,9 @@
 # """
 #
 # # <<range 시험>>
-# # for i in range(1, 3):
-# #     print(i)
-# #     # 1
-# #     # 2
+# for i in range(1, 3):
+#     print(i, end=", ")
+# #     # 1, 2,
 #
 # # for i in range(3, 1):
 # #     print(i)
@@ -67,9 +66,8 @@
 #
 #
 # # for i in range(3, 1, -1):
-# #     print(i)
-# #     # 3
-# #     # 2
+# #     print(i, end", )
+# #     # 3, 2,
 #
 # # <<답안>>
 # desc_list = []
@@ -116,15 +114,8 @@ d = {'a': 15, 'b': 634, 'c': 124, 'd': -436, 'e': -235, 'f': 856, 'g': 23, 'h': 
 # <연습>
 
 # for i in d:
-#     print(i)
-#     # a
-#     # b
-#     # c
-#     # d
-#     # e
-#     # f
-#     # g
-#     # h
+#     print(i, end=", ")
+#     # a, b, c, d, e, f, g, h, 
 
 # for i, j in d:
 #     print(i, j)
@@ -143,19 +134,41 @@ d = {'a': 15, 'b': 634, 'c': 124, 'd': -436, 'e': -235, 'f': 856, 'g': 23, 'h': 
 #     print(j)
 #     # ValueError: not enough values to unpack (expected 2, got 1)
 
+# ValueError에서 expected는 i와 j를 뜻한다.
+# for i, j in d: 를 들여다보면 사실 d에서 i, j를 모두 부여할 수 없다.
+# d.items()를 활용하면 가능하다.
+
+
+# for i, j in d.items():
+#     print(i, j, end=", ")
+#     # a 15, b 634, c 124, d -436, e -235, f 856, g 23, h 523, 
+
+# for i, j in d.items():
+#     print((i, j), end=", ")
+#     # ('a', 15), ('b', 634), ('c', 124), ('d', -436), ('e', -235), ('f', 856), ('g', 23), ('h', 523), 
+
+# for i, j in d.items():
+#     print(f"나는 키\"{i}\", 나는 값\"{j}\"")
+#     # 나는 키"a", 나는 값"15"
+#     # 나는 키"b", 나는 값"634"
+#     # 나는 키"c", 나는 값"124"
+#     # 나는 키"d", 나는 값"-436"
+#     # 나는 키"e", 나는 값"-235"
+#     # 나는 키"f", 나는 값"856"
+#     # 나는 키"g", 나는 값"23"
+#     # 나는 키"h", 나는 값"523"
+
+# for i, j in d.items():
+#     print(i, end=" ")
+#     print(j, end=", ")
+#     # a 15, b 634, c 124, d -436, e -235, f 856, g 23, h 523, 
+
 # for i in d:
-#     print(d[i])
-#     # 15
-#     # 634
-#     # 124
-#     # -436
-#     # -235
-#     # 856
-#     # 23
-#     # 523
+#     print(d[i], end=", ")
+#     # 15, 634, 124, -436, -235, 856, 23, 523, 
 
 
-# # <<답안>>
+# # <<답안1 - value를 추출 후 리스트에 담기.>>
 # empty_list = []
 
 # for i in d:
@@ -173,6 +186,46 @@ d = {'a': 15, 'b': 634, 'c': 124, 'd': -436, 'e': -235, 'f': 856, 'g': 23, 'h': 
 
 # print(sum)
 # # 1504
+
+
+# <<답안2 - .values() 메소드 사용>>
+
+# d_values = d.values()
+
+# print(d_values)
+# # # dict_values([15, 634, 124, -436, -235, 856, 23, 523]) # view로 제공 (set과 유사하므로 indexing 불가)
+
+# sum = 0    # TypeError 수정을 위한 sum값 배정
+
+# for i in d_values:
+
+#     sum += i                # TypeError: unsupported operand type(s) for +=: 'builtin_function_or_method' and 'int'
+#                             # sum이 무엇인지 지정하지를 않아서 그런듯. 후...
+# print(sum)
+# # 1504
+
+
+# <<답안3 - .items() 메소드 사용>>
+
+# d = {'a': 15, 'b': 634, 'c': 124, 'd': -436, 'e': -235, 'f': 856, 'g': 23, 'h': 523}
+
+# sum = 0    # 여기에 value를 모두 합산한다. 무심코 for문에 넣어버리고 헤메는 경우가 있었음.
+
+# print(d.items())
+# # dict_items([('a', 15), ('b', 634), ('c', 124), ('d', -436), ('e', -235), ('f', 856), ('g', 23), ('h', 523)])
+
+# for k, v in d.items():
+#     # print(k, v, end=" ")      # 출력이 마구 개행되어서 /n 대신 " "로 변경함.
+#     # # a 15 b 634 c 124 d -436 e -235 f 856 g 23 h 523
+
+#     # print(v, end=" ")         # 'value만을 뽑을 수 있다.'는 사실을 확인함.
+#     # # 15 634 124 -436 -235 856 23 523
+#     sum += v
+
+# print(sum)
+# # 1504
+
+
 # =======================================================================================
 # # 문제 6번?
 
@@ -209,23 +262,23 @@ d = {'a': 15, 'b': 634, 'c': 124, 'd': -436, 'e': -235, 'f': 856, 'g': 23, 'h': 
 # d = {'a': 15, 'b': 634, 'c': 124, 'd': -436, 'e': -235, 'f': 856, 'g': 23, 'h': 523}
 
 
-# d_value = d.values() # value만을 담는 method이다.
+# d_values = d.values() # value만을 담는 method이다.
 
-# # print(d_value)
+# # print(d_values)
 # # # dict_values([15, 634, 124, -436, -235, 856, 23, 523])
 
 # sum = 0    # 여기에 150이상 값을 더해줍니다.
 
-# # for i in d_value:
+# # for i in d_values:
 # #     print(i, end=" ")    # view 또한 list처럼 연산이 가능한지 확인해봅니다.
 # #     # 15 634 124 -436 -235 856 23 523     # 확인 완료
 
 
-# for i in d_value:
+# for i in d_values:
 #     if i >= 150:
 #         sum += i
-#         # if i == d_value[0]:   # 검산용도 TypeError: 'dict_values' object is not subscriptable
-#         #     break                   # => .value() method가 set-like object를 반환해서
+#         # if i == d_values[0]:   # 검산용도 TypeError: 'dict_values' object is not subscriptable
+#         #     break                   # => .values() method가 set-like object를 반환해서
 #                                     # in같은 연산에는 적합해도, indexing에는 적합하지 않다고 한다.
 #                                     # 만약에 indexing하고싶으면 list()로 감싸라고 한다.
 
@@ -239,66 +292,68 @@ d = {'a': 15, 'b': 634, 'c': 124, 'd': -436, 'e': -235, 'f': 856, 'g': 23, 'h': 
 # # # print(list_d_value)
 # # # # [15, 634, 124, -436, -235, 856, 23, 523]
 # =======================================================================================
-"""
-문제
-해당 함수는 자연수 1개를 받음
-1부터 해당 자연수까지 더하는 함수를 만드세요
+# # 문제 8번?
+# # """
+# # 문제
+# # 해당 함수는 자연수 1개를 받음
+# # 1부터 해당 자연수까지 더하는 함수를 만드세요
 
-자연수 10의 경우
-결과 값 55
+# # 자연수 10의 경우
+# # 결과 값 55
 
-return 여부 비교
-"""
+# # return 여부 비교
+# # """
 
-# def sum(num):
-#     sum_until_num = 0
-#     for i in XXXX:          # 여기서 XXXX라는 리스트가 [1,2,3,4,5,...]처럼 무한하면 편리하겠다.
-#         if i <= num:
-#             sum_until_num += i
-# -----------------------------------------------------------------------------------------------
+# # def sum(num):
+# #     sum_until_num = 0
+# #     for i in XXXX:          # 여기서 XXXX라는 리스트가 [1,2,3,4,5,...]처럼 무한하면 편리하겠다.
+# #         if i <= num:
+# #             sum_until_num += i
+# # -----------------------------------------------------------------------------------------------
 
 # # <<답안>>
 # def sum(num):
 #     sum_num = 0
 #     while True:
-#         sum_num += num       # 이 순간 재귀함수가 있었으면 싶었다. 계속 1씩 빼면 되니까. 근데 사실은 while문이니까 계속 돌아감.
-#         num -= 1   # num = 10이면 sum = 10, num = 9가 됨.
+#         sum_num += num   # 이 순간 재귀함수가 있었으면 싶었다. 계속 1씩 빼면 되니까. 근데 사실은 while문이니까 계속 돌아감.
+#         num -= 1         # num = 10이면 sum = 10, num = 9가 됨.
 #         if num == 0:     # num = 0 인 순간에 sum은 1까지 다 더했음.
 #             break        # while문 끝--->인데 왜 계속 돌아가지???? -> num -= num -1이 아니었습니다 ^^
 #     print(sum_num)
-#     # return sum_num     # return이라고 무한루프가 고쳐지진 않았음
 
 # sum(10)
+# # 55
 # # TypeError: sum() missing 1 required positional argument: 'num'
+# # num -= num -1을 num -= 1로 고치고 해결했음.
 
 # # sum()
 # # # TypeError: sum() missing 1 required positional argument: 'num'
-# ----------------------------------------------------------------------------------------------
+# # ----------------------------------------------------------------------------------------------
 
-# 간단한 함수로 연습하기
-# def hamsu():
-#     print("나는 함수다")
+# # 간단한 함수로 연습하기
+# # def hamsu():
+# #     print("나는 함수다")
 
-# hamsu()
-# # 나는 함수다
-# --------------------------
-# def hamsu1(num):
-#     print(num)
+# # hamsu()
+# # # 나는 함수다
+# # --------------------------
+# # def hamsu1(num):
+# #     print(num)
 
-# hamsu1(11)
-# # 11
-# # argument를 비웠다고 오류가 나진 않음.
-# --------------------------
-# def hamsu2(num):
-#     sum = 0
-#     while True:
-#         sum += num
-#         num -= 1        # 이 부분에서 num -= num - 1이 아니었구나;;;;;;
-#         if num == 0:
-#             break
-#     print(sum)
+# # hamsu1(11)
+# # # 11
+# # # argument를 비웠다고 오류가 나진 않음.
+# # --------------------------
+# # def hamsu2(num):
+# #     sum = 0
+# #     while True:
+# #         sum += num
+# #         num -= 1        # 이 부분에서 num -= num - 1이 아니었구나;;;;;;
+# #         if num == 0:
+# #             break
+# #     print(sum)
 
-# hamsu2(10)
+# # hamsu2(10)
 
 
 
