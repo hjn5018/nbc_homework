@@ -1,18 +1,18 @@
 from pprint import pprint
 
-class Member():                
-    name = ""                  
+class Member():                          # 과제내용 1. Member 클래스 정의
+    name = ""                            # 과제내용 2. Member 클래스의 속성 name, username, password
     username = ""
     password = ""
-    def display(self):
+    def display(self):                   # 과제내용 3. Member 클래스의 메소드 // 회원정보를 출력하는 display(비밀번호 제외)
         print(self.name, self.username)
 
-class Post():                  
-    title = ""                 
+class Post():                            # 과제내용 1. Post 클래스 정의           
+    title = ""                           # 과제내용 4. Post 클래스의 속성 title, content, author(회원의 usename)
     content = ""
     author = "" 
 
-member1 = Member()            
+member1 = Member()                       # 과제내용 5. 회원 인스턴스 세 개 이상 생성
 member2 = Member()
 member3 = Member()
 
@@ -45,11 +45,18 @@ member3_dict["name"] = member3.name
 member3_dict["username"] = member3.username
 member3_dict["password"] = member3.password
 
-members.append(member1_dict)
+members.append(member1_dict)                   # 과제 내용 5. 인스턴스를 빈 리스트에 append
 members.append(member2_dict)
 members.append(member3_dict)
 
-post1 = Post() 
+# for member_dict in members:
+#     print(member_dict['name'])        # 과제 내용 5-a. member 리스트를 돌면서 회원들의 이름을 모두 출력해주세요.
+#     # 몰리1
+#     # 몰리2
+#     # 몰리3
+
+# =========================Post 인스턴스===================================
+post1 = Post()                          # 과제 내용 6. 각각의 회원이 게시글을 세 개 이상 작성하는 코드를 만들어주세요.
 post2 = Post()
 post3 = Post()
 post4 = Post()
@@ -143,7 +150,7 @@ post9_dict["title"] = post9.title
 post9_dict["content"] = post9.content
 post9_dict["author"] = post9.author
 
-posts.append(post1_dict)
+posts.append(post1_dict)                  # 과제내용 6. 만들어진 게시글 인스턴스들은 posts 빈리스트에 append를 써서 저장해주세요.
 posts.append(post2_dict)
 posts.append(post3_dict)
 posts.append(post4_dict)
@@ -152,3 +159,58 @@ posts.append(post6_dict)
 posts.append(post7_dict)
 posts.append(post8_dict)
 posts.append(post9_dict)
+
+# for post in posts:                       # 과제 내용 6-a. for문을 돌면서 특정 유저가 작성한 게시글의 제목을 모두 출력해주세요.
+#     if post['author'] == '몰리1':
+#         print(post['title'])
+
+# # 오운완1
+# # 오T완1
+# # 오S완1
+
+# for post in posts:                        # 과제내용 6-b. for문을 돌면서 '특정 단어'가 content에 포함된 게시글의 제목을 모두 프린트 해주세요.
+#     if '운동' in post['content']:
+#         print(post['title'])
+
+# # 오운완1
+# # 오운완2
+# # 오운완3
+
+
+
+
+
+# =======================================================================================================================
+# **과제 내용:**
+
+# 1. **`Member`** 클래스와 **`Post`** 클래스를 정의하세요.
+# 2. **`Member`** 클래스에는 다음과 같은 속성을 가지고 있어야 합니다.
+#     - 회원 이름 (**`name`**)
+#     - 회원 아이디 (**`username`**)
+#     - 회원 비밀번호 (**`password`**)
+# 3. **`Member`** 클래스에는 다음과 같은 메소드를 가지고 있어야 합니다.
+#     - 회원 정보를 print해주는 `display` (회원이름과 아이디만 보여주고 비밀번호는 보여줘서는 안됩니다!)
+# 4. **`Post`** 클래스에는 다음과 같은 속성을 가지고 있어야 합니다.
+#     - 게시물 제목 (**`title`**)
+#     - 게시물 내용 (**`content`**)
+#     - 작성자 (**`author`**) : 회원의 `username` 이 저장되어야 함!
+# 5. 회원 인스턴스를 세개 이상 만들고 `members` 라는 빈리스트에 append를 써서 저장해주세요
+#     1. members 리스트를 돌면서 회원들의 이름을 모두 프린트 해주세요
+# 6. 각각의 회원이 게시글을 세개 이상 작성하는 코드를 만들어주세요.(회원이 세명이명 총 9개 이상의 post 인스턴스가 만들어져야 합니다). 만들어진 게시글 인스턴스들은 posts 빈리스트에 append를 써서 저장해주세요
+#     1. for 문을 돌면서 특정유저가 작성한 게시글의 제목을 모두 프린트 해주세요
+#     2. for문을 돌면서 ‘특정 단어’가 content에 포함된 게시글의 제목을 모두 프린트 해주세요
+
+# =======================================================================================================================
+# **추가 도전 과제:**
+
+# 1. input을 이용하여 Member 인스턴스 만드는것을 사용자가 터미널에서 할 수 있게 해주세요.
+# 2. post도 터미널에서 생성할 수 있게 해주세요.
+# 3. (심화)비밀번호 해싱이 무엇인지 공부한 후 hashlib 라이브러리를 써서 회원 비밀번호를 해시화하여 저장하게 해주세요.
+
+# =======================================================================================================================
+# **평가**
+
+# - 클래스와 인스턴스 개념을 설명할 수 있는가?
+# - 메소드와 어트리뷰트(속성)을 설명할 수 있는가?
+# - 클래스를 정의할 수 있는가?
+# - 인스턴스를 생성할 수 있는가?

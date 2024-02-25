@@ -72,8 +72,10 @@ members.append(member1_dict)
 members.append(member2_dict)
 members.append(member3_dict)
 
-# print(members)
-# [{'name': '몰리1', 'username': '카다1', 'password': '보1'}, {'name': '몰리2', 'username': '카다2', 'password': '보2'}, {'name': '몰리3', 'username': '카다3', 'password': '보3'}]
+pprint(members)
+# [{'name': '몰리1', 'password': '보1', 'username': '카다1'},
+#  {'name': '몰리2', 'password': '보2', 'username': '카다2'},
+#  {'name': '몰리3', 'password': '보3', 'username': '카다3'}]
 
 
 # members = members.append(member2) # AttributeError: 'NoneType' object has no attribute 'append'
@@ -85,9 +87,9 @@ members.append(member3_dict)
 
 # for member_dict in members:
 #     print(member_dict['name'])        # 과제 5-a
-    # 몰리1
-    # 몰리2
-    # 몰리3
+#     # 몰리1
+#     # 몰리2
+#     # 몰리3
 
 
 
@@ -286,23 +288,6 @@ posts.append(post9_dict)
 
 # for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
 #     print(i)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
