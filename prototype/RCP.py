@@ -96,9 +96,9 @@ while True:
             records.append("무")
             print("비겼습니다.")
     else:
-        print("유효한 입력이 아닙니다.")    # 원래는 player_input == "보"인 경우를 else로 했는데
-                                          # else에 오타입력일 때에도 들어가버려서 게임할 때 좀 억울했음
-                                          # append하지 않으면 괜찮으니까 조금 번거롭더라도 elif 하나 생성하고 else따로 빼줌
+        print("유효한 입력이 아닙니다.")      # 원래는 player_input == "보"인 경우를 else로 했는데
+                                            # else에 오타입력일 때에도 들어가버려서 게임할 때 좀 억울했음
+                                            # append하지 않으면 괜찮으니까 조금 번거롭더라도 elif 하나 생성하고 else따로 빼줌
 
     ask_more = input("한 판 더? (y/n): ")  # 게임 반복 또는 종료
     if ask_more == "y" or ask_more == "Y": # 대소문자 구분하지 않도록 -- 추가도전과제 2.
