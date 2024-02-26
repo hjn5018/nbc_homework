@@ -38,7 +38,7 @@ def winlosedraw(list):  # 승무패 기록 출력 함수 .ver2(인덴트 수정 
 
 
 while True:
-    player_input = input("안 내면 진거 가위 바위 보!: ")  # player가 가위, 바위, 보 중 하나를 입력한다.
+    player_input = input("안 내면 진 거 가위 바위 보!: ")  # player가 가위, 바위, 보 중 하나를 입력한다.
 
     if player_input == "가위":  # 이 구문이 어지러워 보여서 def를 쓸까 했는데, 분기마다 내용이 달라져서 정의하기 어려울 것 같다.
         if computer_RCP == "가위":
@@ -74,7 +74,7 @@ while True:
         print("유효한 입력이 아닙니다.")  # 원래는 player_input == "보"인 경우를 else로 했다.
         # 시험삼아서 게임했을 때, else에 오타입력일 때에도 들어가버려서 게임할 때 좀 억울했음
         # append하지 않으면 괜찮으니까 조금 번거롭더라도 elif 하나 생성하고 else따로 빼줌
-
+        continue
     ask_more = input("한 판 더? (y/n): ")  # 게임 반복 또는 종료
     if ask_more == "y" or ask_more == "Y":  # 대소문자 구분하지 않도록 -- 추가도전과제 2.
         continue
