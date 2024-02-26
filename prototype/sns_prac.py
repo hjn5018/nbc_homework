@@ -92,7 +92,6 @@ for member_dict in members:
 #     # 몰리3
 
 
-
 # print(members[0]['name'])
 # 몰리 1
 
@@ -255,7 +254,6 @@ for post in posts:                       # 과제내용 6-a
 # 오S완1
 
 
-
 for post in posts:                        # 과제내용 6-b
     if '운동' in post['content']:     # content에 특정 단어가 들어간 post 확인
         print(post['title'])            # 해당 포스트의 제목 출력
@@ -263,12 +261,7 @@ for post in posts:                        # 과제내용 6-b
 # 오운완1
 # 오운완2
 # 오운완3
-
-
-
-
-
-
+        
 
 # for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
 #     posts[i]_dict["title"] = post[i].title
@@ -288,7 +281,6 @@ for post in posts:                        # 과제내용 6-b
 
 # for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
 #     print(i)
-
 
 
 # posts_title = []
