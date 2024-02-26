@@ -16,7 +16,7 @@ class Post():                  # 과제 내용 1. Member 클래스와 Post 클�
 # member2 = Member("카다")
 # member3 = Member("보")
 
-member1 = Member()            # Member instance 생성 (과제 내용 5-a)
+member1 = Member()            # Member instance 생성 (과제 내용 5)
 member2 = Member()
 member3 = Member()
 
@@ -72,10 +72,10 @@ members.append(member1_dict)
 members.append(member2_dict)
 members.append(member3_dict)
 
-pprint(members)
-# [{'name': '몰리1', 'password': '보1', 'username': '카다1'},
-#  {'name': '몰리2', 'password': '보2', 'username': '카다2'},
-#  {'name': '몰리3', 'password': '보3', 'username': '카다3'}]
+# pprint(members)
+# # [{'name': '몰리1', 'password': '보1', 'username': '카다1'},
+# #  {'name': '몰리2', 'password': '보2', 'username': '카다2'},
+# #  {'name': '몰리3', 'password': '보3', 'username': '카다3'}]
 
 
 # members = members.append(member2) # AttributeError: 'NoneType' object has no attribute 'append'
@@ -85,8 +85,8 @@ pprint(members)
 # members.append("1") # append test
 # print(members)      # append test
 
-# for member_dict in members:
-#     print(member_dict['name'])        # 과제 5-a
+for member_dict in members:
+    print(member_dict['name'])        # 과제 5-a
 #     # 몰리1
 #     # 몰리2
 #     # 몰리3
@@ -246,9 +246,9 @@ posts.append(post9_dict)
 
 
 
-# for post in posts:                       # 과제내용 6-a
-#     if post['author'] == '몰리1':        # 특정유저 검색
-#         print(post['title'])             # 유저의 post title 출력
+for post in posts:                       # 과제내용 6-a
+    if post['author'] == '몰리1':        # 특정유저 검색
+        print(post['title'])             # 유저의 post title 출력
 
 # 오운완1
 # 오T완1
@@ -256,9 +256,9 @@ posts.append(post9_dict)
 
 
 
-# for post in posts:                        # 과제내용 6-b
-#     if '운동' in post['content']:     # content에 특정 단어가 들어간 post 확인
-#         print(post['title'])            # 해당 포스트의 제목 출력
+for post in posts:                        # 과제내용 6-b
+    if '운동' in post['content']:     # content에 특정 단어가 들어간 post 확인
+        print(post['title'])            # 해당 포스트의 제목 출력
 
 # 오운완1
 # 오운완2

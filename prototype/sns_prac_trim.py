@@ -49,8 +49,8 @@ members.append(member1_dict)                   # 과제 내용 5. 인스턴스�
 members.append(member2_dict)
 members.append(member3_dict)
 
-# for member_dict in members:
-#     print(member_dict['name'])        # 과제 내용 5-a. member 리스트를 돌면서 회원들의 이름을 모두 출력해주세요.
+for member_dict in members:
+    print(member_dict['name'])        # 과제 내용 5-a. member 리스트를 돌면서 회원들의 이름을 모두 출력해주세요.
 #     # 몰리1
 #     # 몰리2
 #     # 몰리3
@@ -160,17 +160,17 @@ posts.append(post7_dict)
 posts.append(post8_dict)
 posts.append(post9_dict)
 
-# for post in posts:                       # 과제 내용 6-a. for문을 돌면서 특정 유저가 작성한 게시글의 제목을 모두 출력해주세요.
-#     if post['author'] == '몰리1':
-#         print(post['title'])
+for post in posts:                       # 과제 내용 6-a. for문을 돌면서 특정 유저가 작성한 게시글의 제목을 모두 출력해주세요.
+    if post['author'] == '몰리1':
+        print(post['title'])
 
 # # 오운완1
 # # 오T완1
 # # 오S완1
 
-# for post in posts:                        # 과제내용 6-b. for문을 돌면서 '특정 단어'가 content에 포함된 게시글의 제목을 모두 프린트 해주세요.
-#     if '운동' in post['content']:
-#         print(post['title'])
+for post in posts:                        # 과제내용 6-b. for문을 돌면서 '특정 단어'가 content에 포함된 게시글의 제목을 모두 프린트 해주세요.
+    if '운동' in post['content']:
+        print(post['title'])
 
 # # 오운완1
 # # 오운완2
