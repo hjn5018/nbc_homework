@@ -49,7 +49,7 @@ for member_dict in members:
 # 몰리2
 # 몰리3
 
-# =========================Post 인스턴스===================================
+
 post1 = Post("오운완1", "오늘 운동 완료1", f"{member1.name}")
 post2 = Post("오T완1", "오늘 TIL 완료1", f"{member1.name}")
 post3 = Post("오S완1", "오늘 SQL 완료1", f"{member1.name}")
@@ -107,7 +107,7 @@ post9_dict["title"] = post9.title
 post9_dict["content"] = post9.content
 post9_dict["author"] = post9.author
 
-posts.append(post1_dict)                  # 과제내용 6. 만들어진 게시글 인스턴스들은 posts 빈리스트에 append를 써서 저장해주세요.
+posts.append(post1_dict)                  
 posts.append(post2_dict)
 posts.append(post3_dict)
 posts.append(post4_dict)
@@ -117,7 +117,7 @@ posts.append(post7_dict)
 posts.append(post8_dict)
 posts.append(post9_dict)
 
-for post in posts:                       # 과제 내용 6-a. for문을 돌면서 특정 유저가 작성한 게시글의 제목을 모두 출력해주세요.
+for post in posts:                       
     if post['author'] == '몰리1':
         print(post['title'])
 
@@ -125,7 +125,7 @@ for post in posts:                       # 과제 내용 6-a. for문을 돌면�
 # # 오T완1
 # # 오S완1
 
-for post in posts:                        # 과제내용 6-b. for문을 돌면서 '특정 단어'가 content에 포함된 게시글의 제목을 모두 프린트 해주세요.
+for post in posts:                        
     if '운동' in post['content']:
         print(post['title'])
 
@@ -142,7 +142,7 @@ print("약관 : 안녕 hello")
 create_instance_or_not = input("약관에 동의하십니까? (y/n): ") # Member 인스턴스 생성 준비
 
 if create_instance_or_not == "y": # 약관에 동의하면
-    member_a = Member(input("이름을 적어주세요: "), input("활동명을 적어주세요: "), input("비밀번호를 적어주세요: "))         # 인스턴스 생성
+    member_a = Member(input("이름을 적어주세요: "), input("활동명을 적어주세요: "), input("비밀번호를 적어주세요: "))   # 인스턴스 생성
 
 # =============================비밀번호 해싱==============================
 iters = 100000    # 일반적인 반복 횟수
@@ -154,13 +154,12 @@ member_a_dict = {}
 member_a_dict["name"] = member_a.name
 member_a_dict["username"] = member_a.username
 member_a_dict["password"] = dk.hex()    # 비밀번호를 헥사값(16진법)으로 담는다.
-# ========================================================================
+# ===========================비밀번호 해싱 끝===============================
 members.append(member_a_dict)    # 리스트에 인스턴스 정보 추가
 
 pprint(members)
 
 
-# -------------------post-----------------------------
 add_post = input("게시글을 작성하시겠습니까? (y/n): ")    # Post 인스턴스 생성 준비
 
 if add_post == 'y':    # 동의하면
@@ -273,10 +272,6 @@ pprint(posts)
 # posts.append(post_a_dict)    # 인스턴스의 딕셔너리를 리스트에 추가
 
 # pprint(posts)
-
-
-
-
 
 # # =======================================================================================================================
 # # **추가 도전 과제:**
