@@ -21,7 +21,8 @@ class Amugeona:
 # # NameError: name '__dir__' is not defined
 # ================================================================================================
 # print(dir())
-# # ['__annotations__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'amugeona']
+# # ['__annotations__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__',
+# #    '__name__', '__package__', '__spec__', 'amugeona'] <<< 클래스가 포함됐다.
     
 # print(amugeona.__dir__)
 # # <method '__dir__' of 'object' objects>
