@@ -6,14 +6,14 @@ pupil1_greedy = Gibucheonsa()
 pupil2_thoughtful = Gibucheonsa()
 pupil1_greedy.these = "are mine"
 
-# print(Gibucheonsa.these)
-# # are all yours
+print(Gibucheonsa.these)
+# are all yours
 
-# print(pupil1_greedy.these)
-# # are mine
+print(pupil1_greedy.these)
+# are mine
 
-# print(pupil2_thoughtful.these)
-# # are all yours
+print(pupil2_thoughtful.these)
+# are all yours
 
 # ================================================================================
 # print(Gibucheonsa.__dict__)
