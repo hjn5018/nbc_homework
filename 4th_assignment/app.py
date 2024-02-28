@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
 import random
 
+app = Flask(__name__)
+
+# 가위바위보 random_number 생성
 random_number = random.randint(1, 3) 
 
 
@@ -12,8 +15,8 @@ elif random_number == 2:
 else:                       
     computer_RCP = "보"
 
-app = Flask(__name__)
 
+# DB 생성
 import os
 from flask_sqlalchemy import SQLAlchemy
 
@@ -23,6 +26,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] =\
 
 db = SQLAlchemy(app)
 
+
+# 유저 인풋(가위/바위/보) DB
 class UserInput(db.Model):
     trial = db.Column(db.Integer, primary_key=True)
     user_input = db.Column(db.String(100), nullable=False)
@@ -31,6 +36,7 @@ class UserInput(db.Model):
         return f'내가 낸 것 : {self.user_input}'
 
 
+#  인풋 결과값 승무패 DB
 class RCPrecords(db.Model):
     trial = db.Column(db.Integer, primary_key=True)
     win = db.Column(db.Integer, nullable=False)
@@ -39,11 +45,13 @@ class RCPrecords(db.Model):
 
     def __repr__(self):
         return f'승: {self.win} 패: {self.lose} 무: {self.draw}'
-    
+
+
 with app.app_context():
     db.create_all()
 
 
+# homepage
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -51,6 +59,7 @@ def home():
     # return render_template("index.html", data=RCP_records)
 
 
+# homepage의 유저인풋 가져오기
 @app.route("/create/")
 def RCP_create():
     user_input_receive = request.args.get("user_input")
@@ -71,20 +80,13 @@ def RCP_create():
 #     db.session.add(rcprecords)
 #     db.session.commit()
 
-# @app.route("/outcome")
-# def outcome():
-#     user_inputs = UserInput.query.all()
-#     return render_template("outcome.html", data=user_inputs)
-#     RCP_records = RCPrecords.query.all()
-#     return render_template("index.html", data=RCP_records)
 
+# 게임결과 페이지
 @app.route("/outcome")
 def outcome():
     user_inputs = UserInput.query.all()
     return render_template("outcome.html", data=user_inputs)
     
-    
-
 
 if __name__ == "__main__":
     app.run(debug=True)
