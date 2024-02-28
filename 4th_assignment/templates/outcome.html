@@ -11,16 +11,18 @@
 
 <body>
     <h1>게임 결과</h1>
-
-    <form action="" method="GET">
+    <img src="{{ url_for('static', filename='janken_pa.png')}}" alt="" style="width: 50px; height: auto; margin: auto">
+    <form action="{{ url_for('RCP_create') }}" method="GET">
         <label for="RCP" class="form-label">한 판 더 하기!</label>
-        <input type="RCP" class="form-control" id="RCP" aria-describedby="RCP">
+        <input type="RCP" class="form-control" id="RCP" name="user_input">
         <button type="submit" class="btn btn-primary">제출하기</button>
     </form>
     <p>
-        내가 낸 거 : {{ data.user_input }}
+        {% for i in data %}
+            유저 : {{ i.user_input }}<br>
+        {% endfor %}
     </p>
-
+    
 
 
 
