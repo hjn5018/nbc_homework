@@ -17,7 +17,7 @@ def max_tryout(i_list):     # 가장 큰 숫자 찾기(시도한 횟수 제일 �
 print("<<업 다운 게임을 시작합니다.>>")    # 게임 시작
 
 while True:    # 게임을 반복한다.(유저가 y 이외의 키를 입력하여 게임을 끝낼 때 까지)
-    # try:
+    try:
         print(f'확인 용도 {random_number}')  # 무작위 숫자 확인 용도
         # i = 1    # 이건 실패의 흔적 (업이든 다운이든 분기가 끝나고 다시 while 돌면 횟수가 초기화 됨.)
         player_input = int(input("숫자를 입력하세요: "))  # player 입력 // str -> int
@@ -41,5 +41,5 @@ while True:    # 게임을 반복한다.(유저가 y 이외의 키를 입력하�
                 else:
                     print(f"최고 시도 횟수는 {max_tryout(i_list)}회입니다.")  # 추가 도전 과제 3.
                     break  # 최고 시도 횟수 고지
-    # except:
-    #     print("1부터 100까지의 자연수를 입력해주세요!")    # 오류 발생 시 안내.
+    except: # 24번에서 거르지 못하는 소수, 문자열을 거른다.
+        print("1부터 100까지의 자연수를 입력해주세요!")    # 오류 발생 시 안내.
